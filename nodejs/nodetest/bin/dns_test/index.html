@@ -5,28 +5,29 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <style type="text/css">
-        .container{
+        .container {
             margin-top: 5em;
         }
-        #check_result{
+
+        #check_result {
             color: #CD46A2;
         }
     </style>
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
     <script>
-        $(function(){
-            $('from').submit(function(){
-                var $this=$(this),
-                        search_dns=$("#search_dns").val(),
-                        url=$this.attr("action");
-            if(search_dns){
-                $.get(url,{seach_dns:search_dns},function(res){
-                    var res=JSON.parse(res);
-                    $('#check_result').html('IP地址：'+res.address);
-                });
-            }else{
-                alert('请输入域名');
-            }
+        $(function () {
+            $('from').submit(function () {
+                var $this = $(this),
+                        search_dns = $("#search_dns").val(),
+                        url = $this.attr("action");
+                if (search_dns) {
+                    $.get(url, {seach_dns: search_dns}, function (res) {
+                        var res = JSON.parse(res);
+                        $('#check_result').html('IP地址：' + res.address);
+                    });
+                } else {
+                    alert('请输入域名');
+                }
             });
         });
     </script>

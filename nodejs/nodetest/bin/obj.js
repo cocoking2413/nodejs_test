@@ -1,9 +1,9 @@
 /**
  * Created by Administrator on 2016-06-25.
  */
-var dns=require("dns");
+var dns = require("dns");
 
-dns.lookup("www.zbzbx.com",4,function(err, address, family){
+dns.lookup("www.zbzbx.com", 4, function (err, address, family) {
     console.log('ip 地址:', address);
     dns.reverse(address, function (err, hostnames) {
         if (err) {
@@ -14,7 +14,7 @@ dns.lookup("www.zbzbx.com",4,function(err, address, family){
 });
 
 
-dns.lookup("www.baidu.com",4,function(err, address, family){
+dns.lookup("www.baidu.com", 4, function (err, address, family) {
     console.log('ip 地址:', address);
     dns.reverse(address, function (err, hostnames) {
         if (err) {

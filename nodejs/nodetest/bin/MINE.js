@@ -20,7 +20,7 @@ exports.types = {
     "wma": "audio/x-ms-wma",
     "wmv": "video/x-ms-wmv",
     "xml": "text/xml",
-    "mp3":"audio/x-mp3",
+    "mp3": "audio/x-mp3",
     "lrc": "application/json"
 
 };

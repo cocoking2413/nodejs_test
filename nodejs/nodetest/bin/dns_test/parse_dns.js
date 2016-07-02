@@ -20,13 +20,13 @@ exports.parseDns = function (res, req) {
     });
 };
 
-function getDns(postData,callBack){
-    var domain=querystring.parse(postData).seach_dns;
+function getDns(postData, callBack) {
+    var domain = querystring.parse(postData).seach_dns;
     console.log(domain);
-    dns.resolve(domain,function(err,address){
-       if(!address){
-           address=['not found'];
-       }
-        callBack(domain,address);
+    dns.resolve(domain, function (err, address) {
+        if (!address) {
+            address = ['not found'];
+        }
+        callBack(domain, address);
     });
 }

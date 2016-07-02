@@ -4,8 +4,8 @@
 /**********
  * Test
  * **********/
-String.prototype.replaceAll = function(s1,s2) {
-    return this.replace(new RegExp(s1,"gm"),s2);
+String.prototype.replaceAll = function (s1, s2) {
+    return this.replace(new RegExp(s1, "gm"), s2);
 };
 var PORT = 3000;
 
@@ -37,14 +37,14 @@ var server = http.createServer(function (request, response) {
                     if (lrc_file_name == '') {
                         error_404(response, pathname);
                     } else {
-                        var patha = path.join("play-24243636d7", "mp3" , lrc_file_name);
+                        var patha = path.join("play-24243636d7", "mp3", lrc_file_name);
                         fs.exists(patha, function (exist) {
                             if (exist) {
                                 fs.readFile(patha, function (err, file) {
                                     if (err) {
                                         error_500(err);
                                     } else {
-                                        var data = file.toString().replaceAll("\r\n", ",").replaceAll("\n",",");
+                                        var data = file.toString().replaceAll("\r\n", ",").replaceAll("\n", ",");
                                         var str = {
                                             state: "success",
                                             message: "all have done",
@@ -54,9 +54,9 @@ var server = http.createServer(function (request, response) {
                                     }
                                 });
                             } else {
-                                var str={
-                                    state:"success",
-                                    message:"all have done",
+                                var str = {
+                                    state: "success",
+                                    message: "all have done",
                                     lrc: "没有歌曲!"
                                 };
                                 return_200(JSON.stringify(str));
@@ -66,19 +66,20 @@ var server = http.createServer(function (request, response) {
                 }
                 else if (lrc_name == "get_music_list")//获取所有歌曲列表
                 {
-                    fs.readdir("play-24243636d7/mp3", function(err,files){
-                        if(err){console.log(0);
-                            error_404(response,pathname);
+                    fs.readdir("play-24243636d7/mp3", function (err, files) {
+                        if (err) {
+                            console.log(0);
+                            error_404(response, pathname);
                         }
-                        var music_list=new Array();
-                        files.forEach(function(filename){
-                           if(filename.indexOf(".mp3")>0){
-                               music_list.push(filename);
-                           }
+                        var music_list = new Array();
+                        files.forEach(function (filename) {
+                            if (filename.indexOf(".mp3") > 0) {
+                                music_list.push(filename);
+                            }
                         });
-                        var str={
-                            state:"success",
-                            music_list:music_list
+                        var str = {
+                            state: "success",
+                            music_list: music_list
                         };
                         return_200(JSON.stringify(str));
                     });

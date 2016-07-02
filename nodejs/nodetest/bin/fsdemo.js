@@ -4,8 +4,8 @@
 /**********
  * 链式流
  * ********/
-var fs=require("fs");
-var zlib=require("zlib");
+var fs = require("fs");
+var zlib = require("zlib");
 
 //压缩文件 test.txt 到 test.txt.gz
 //fs.createReadStream("test.txt").pipe(zlib.createGzip()).pipe(fs.createWriteStream("test.txt.gz"));
@@ -13,8 +13,7 @@ var zlib=require("zlib");
 //解压缩文件 test.txt.gz 到 test.txt
 fs.createReadStream("test.txt.gz").pipe(zlib.createGzip()).pipe(fs.createWriteStream("test.txt"));
 
-console.log("over at:"+(new Date()));
-
+console.log("over at:" + (new Date()));
 
 
 /**********

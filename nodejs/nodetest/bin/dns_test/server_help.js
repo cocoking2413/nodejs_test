@@ -6,7 +6,7 @@ var url = require('url');
 var mine = require('../MINE.js').types;
 var path = require('path');
 
-exports.return_200=function(nilstr,response,pathname,file) {
+exports.return_200 = function (nilstr, response, pathname, file) {
     var ext = path.extname(pathname);
     ext = ext ? ext.slice(1) : 'unknown';
     var contentType = mine[ext] || "text/html";
@@ -17,7 +17,7 @@ exports.return_200=function(nilstr,response,pathname,file) {
     response.write(file);
     response.end();
 };
-exports.error_404=function error_404(nilstr,response, pathname) {
+exports.error_404 = function error_404(nilstr, response, pathname) {
     response.writeHead(404, {
         'Content-Type': 'text/html;',
         'charset': 'UTF-8'
@@ -25,7 +25,7 @@ exports.error_404=function error_404(nilstr,response, pathname) {
     response.write("This request URL " + pathname + " was not found on this server.");
     response.end();
 };
-exports.error_500=function error_500(nilstr,response,err) {
+exports.error_500 = function error_500(nilstr, response, err) {
     response.writeHead(500, {
         'Content-Type': 'text/html',
         'charset': 'UTF-8'
