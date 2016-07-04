@@ -48,6 +48,6 @@ Temporary Items
 
 
 # Items like bin file
-.idea
-.xml
+*.idea
+*.xml
 nodejs/.idea/workspace.xml
