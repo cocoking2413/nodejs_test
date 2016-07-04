@@ -94,8 +94,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nodetest/bin/dns_test/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65316045">
-              <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+            <state vertical-scroll-proportion="2.495948">
+              <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
               <folding>
                 <element signature="e#2005#2471#0" expanded="false" />
                 <element signature="e#3272#3466#0" expanded="false" />
@@ -113,9 +113,9 @@
         <option value="$PROJECT_DIR$/nodetest/bin/test.txt" />
         <option value="$PROJECT_DIR$/nodetest/bin/dns_test/server_help.js" />
         <option value="$PROJECT_DIR$/nodetest/bin/dns_test/mainIndex.js" />
-        <option value="$PROJECT_DIR$/nodetest/bin/dns_test/server.js" />
         <option value="$PROJECT_DIR$/nodetest/bin/dns_test/index.html" />
         <option value="$PROJECT_DIR$/nodetest/bin/dns_test/parse_dns.js" />
+        <option value="$PROJECT_DIR$/nodetest/bin/dns_test/server.js" />
       </list>
     </option>
   </component>
@@ -333,7 +333,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="1" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -516,8 +516,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nodetest/bin/dns_test/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65316045">
-          <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+        <state vertical-scroll-proportion="2.495948">
+          <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
           <folding>
             <element signature="e#2005#2471#0" expanded="false" />
             <element signature="e#3272#3466#0" expanded="false" />
