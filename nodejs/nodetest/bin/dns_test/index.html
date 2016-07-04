@@ -16,15 +16,35 @@
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
     <script>
         $(function () {
-            $('from').submit(function () {
-                var $this = $(this),
-                        search_dns = $("#search_dns").val(),
-                        url = $this.attr("action");
+            $('#btn').on("click", function () {
+                var search_dns = $("#search_dns").val(),
+                        url = $("form:eq(0)").attr("action");
                 if (search_dns) {
-                    $.get(url, {seach_dns: search_dns}, function (res) {
-                        var res = JSON.parse(res);
-                        $('#check_result').html('IP地址：' + res.address);
-                    });
+                    if (confirm(search_dns + url)) {
+                        var req_type = 1;
+                        var ips = search_dns.split('.');
+                        console.log();
+                        console.log(ips);
+                        try {
+                            if (ips instanceof Array && ips.length == 4) {
+                                var bl = true;
+                                for(var i=0;i<4;i++){
+                                    if (isNaN(ips[i])) {
+                                        bl = false;
+                                    }
+                                }
+                                if (bl) {
+                                    req_type = 2;
+                                }
+                            }
+                            $.post(url, {seach_type: req_type, seach_dns: search_dns}, function (res) {
+                                var re = eval("(" + res + ")");
+                                $('#check_result').html('IP地址：' + re.IP);
+                            });
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    }
                 } else {
                     alert('请输入域名');
                 }
@@ -50,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-8">
-                                <button type="submit" class="btn btn-primary">查询</button>
+                                <button type="button" id="btn" class="btn btn-primary">查询</button>
                                 <button type="reset" class="btn btn-default">重置</button>
                             </div>
                         </div>
